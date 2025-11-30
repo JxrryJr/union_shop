@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                IconButton(
+                                IconButton( // tooltip: 'Search',
                                   icon: const Icon(
                                     Icons.search,
                                     size: 18,
@@ -110,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton(
+                                IconButton( // tooltip: 'Account',
                                   icon: const Icon(
                                     Icons.person_outline,
                                     size: 18,
@@ -122,9 +122,8 @@ class HomeScreen extends StatelessWidget {
                                     minHeight: 32,
                                   ),
                                   onPressed: placeholderCallbackForButtons,
-                                  // tooltip: 'Account',
                                   ),
-                                IconButton(
+                                IconButton( // tooltip: 'Cart',
                                   icon: const Icon(
                                     Icons.shopping_bag_outlined,
                                     size: 18,
@@ -137,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton(
+                                IconButton( // tooltip: 'Menu',
                                   icon: const Icon(
                                     Icons.menu,
                                     size: 18,
