@@ -316,27 +316,38 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
-              child: Column(
+              child: const Column(
                 children: [
-                  Container(
-                    child: const Text(
-                      'Opening Hours'
-                      '❄️ Winter Break Closure Dates ❄️'
-                      'Closing 4pm 19/12/2025'
-                      'Reopening 10am 05/01/2026'
-                      'Last post date: 12pm on 18/12/2025'
-                      '------------------------'
-                      '(Term Time)'
-                      'Monday - Friday 10am - 4pm'
-                      '(Outside of Term Time / Consolidation Weeks)'
-                      'Monday - Friday 10am - 3pm'
-                      'Purchase online 24/7',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Opening Hours\n'
+                        '❄️ Winter Break Closure Dates ❄️\n'
+                        'Closing 4pm 19/12/2025\n'
+                        'Reopening 10am 05/01/2026\n'
+                        'Last post date: 12pm on 18/12/2025\n'
+                        '------------------------',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
+                      SizedBox(height: 8),
+                      Text(
+                        '(Term Time)\n'
+                        'Monday - Friday 10am - 4pm\n'
+                        '(Outside of Term Time / Consolidation Weeks)\n'
+                        'Monday - Friday 10am - 3pm\n'
+                        'Purchase online 24/7',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -379,7 +390,6 @@ class ProductCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, '/product');
-        Navigator.pushNamed(context, '/account');
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
