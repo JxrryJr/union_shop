@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/product_page.dart';
+import 'package:union_shop/account_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -97,7 +98,8 @@ class HomeScreen extends StatelessWidget {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                IconButton( // tooltip: 'Search',
+                                IconButton(
+                                  // tooltip: 'Search',
                                   icon: const Icon(
                                     Icons.search,
                                     size: 18,
@@ -110,7 +112,8 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton( // tooltip: 'Account',
+                                IconButton(
+                                  // tooltip: 'Account',
                                   icon: const Icon(
                                     Icons.person_outline,
                                     size: 18,
@@ -122,8 +125,9 @@ class HomeScreen extends StatelessWidget {
                                     minHeight: 32,
                                   ),
                                   onPressed: placeholderCallbackForButtons,
-                                  ),
-                                IconButton( // tooltip: 'Cart',
+                                ),
+                                IconButton(
+                                  // tooltip: 'Cart',
                                   icon: const Icon(
                                     Icons.shopping_bag_outlined,
                                     size: 18,
@@ -136,7 +140,8 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton( // tooltip: 'Menu',
+                                IconButton(
+                                  // tooltip: 'Menu',
                                   icon: const Icon(
                                     Icons.menu,
                                     size: 18,
@@ -324,44 +329,46 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, '/product');
-      },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Image.network(
-              imageUrl,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  color: Colors.grey[300],
-                  child: const Center(
-                    child: Icon(Icons.image_not_supported, color: Colors.grey),
-                  ),
-                );
-              },
+        onTap: () {
+          Navigator.pushNamed(context, '/product');
+          Navigator.pushNamed(context, '/account');
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    color: Colors.grey[300],
+                    child: const Center(
+                      child:
+                          Icon(Icons.image_not_supported, color: Colors.grey),
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 4),
-              Text(
-                title,
-                style: const TextStyle(fontSize: 14, color: Colors.black),
-                maxLines: 2,
-              ),
-              const SizedBox(height: 4),
-              Text(
-                price,
-                style: const TextStyle(fontSize: 13, color: Colors.grey),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 4),
+                Text(
+                  title,
+                  style: const TextStyle(fontSize: 14, color: Colors.black),
+                  maxLines: 2,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  price,
+                  style: const TextStyle(fontSize: 13, color: Colors.grey),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
   }
 }
