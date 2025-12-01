@@ -71,7 +71,7 @@ class AboutUsPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: const Text(
           'About Us',
-          style: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold,),
         ),
       ),
           ],

@@ -101,6 +101,18 @@ class HomeScreen extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 IconButton(
+                                  icon: const Text(
+                                    'ABOUT US',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                    ),
+                                  ), onPressed: () => Navigator.pushNamed(context, '/about',),
+                                ),
+
+                                IconButton(
                                   // tooltip: 'Search',
                                   icon: const Icon(
                                     Icons.search,
