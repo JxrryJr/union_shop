@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/product_page.dart';
 import 'package:union_shop/account_page.dart';
+import 'package:union_shop/about_us_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -18,11 +19,12 @@ class UnionShopApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4d2963)),
       ),
       home: const HomeScreen(),
-      // By default, the app starts at the '/' route, which is the HomeScreen
       initialRoute: '/',
-      // When navigating to '/product', build and return the ProductPage
-      // In your browser, try this link: http://localhost:49856/#/product
-      routes: {'/product': (context) => const ProductPage()},
+      routes: {
+        '/product': (context) => const ProductPage(),
+        '/account': (context) => const AccountPage(),
+        '/about': (context) => const AboutUsPage(),
+        },
     );
   }
 }
@@ -124,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () => Navigator.pushNamed(context, '/account'),
                                 ),
                                 IconButton(
                                   // tooltip: 'Cart',
