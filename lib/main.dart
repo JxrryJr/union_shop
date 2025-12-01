@@ -321,7 +321,7 @@ class HomeScreen extends StatelessWidget {
                   const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Opening Hours\n'
                         '❄️ Winter Break Closure Dates ❄️\n'
                         'Closing 4pm 19/12/2025\n'
@@ -334,8 +334,8 @@ class HomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      const Text(
+                      SizedBox(height: 8),
+                      Text(
                         '(Term Time)\n'
                         'Monday - Friday 10am - 4pm\n'
                         '(Outside of Term Time / Consolidation Weeks)\n'
