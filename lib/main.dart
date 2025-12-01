@@ -70,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                   // Main header
                   Expanded(
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                       child: Row(
                         children: [
                           GestureDetector(
@@ -316,12 +316,12 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
-              child: const Column(
+              child: Column(
                 children: [
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Opening Hours\n'
                         '❄️ Winter Break Closure Dates ❄️\n'
                         'Closing 4pm 19/12/2025\n'
@@ -334,8 +334,8 @@ class HomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         '(Term Time)\n'
                         'Monday - Friday 10am - 4pm\n'
                         '(Outside of Term Time / Consolidation Weeks)\n'
