@@ -24,7 +24,7 @@ class UnionShopApp extends StatelessWidget {
         '/product': (context) => const ProductPage(),
         '/account': (context) => const AccountPage(),
         '/about': (context) => const AboutUsPage(),
-        },
+      },
     );
   }
 }
@@ -109,9 +109,12 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w600,
                                       letterSpacing: 1,
                                     ),
-                                  ), onPressed: () => Navigator.pushNamed(context, '/about',),
+                                  ),
+                                  onPressed: () => Navigator.pushNamed(
+                                    context,
+                                    '/about',
+                                  ),
                                 ),
-
                                 IconButton(
                                   // tooltip: 'Search',
                                   icon: const Icon(
@@ -138,7 +141,8 @@ class HomeScreen extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: () => Navigator.pushNamed(context, '/account'),
+                                  onPressed: () =>
+                                      Navigator.pushNamed(context, '/account'),
                                 ),
                                 IconButton(
                                   // tooltip: 'Cart',
@@ -312,8 +316,38 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  Container(
+                    child: const Text(
+                      'Opening Hours'
+                      '❄️ Winter Break Closure Dates ❄️'
+                      'Closing 4pm 19/12/2025'
+                      'Reopening 10am 05/01/2026'
+                      'Last post date: 12pm on 18/12/2025'
+                      '------------------------'
+                      '(Term Time)'
+                      'Monday - Friday 10am - 4pm'
+                      '(Outside of Term Time / Consolidation Weeks)'
+                      'Monday - Friday 10am - 3pm'
+                      'Purchase online 24/7',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              width: double.infinity,
+              color: Colors.grey[50],
+              padding: const EdgeInsets.all(24),
               child: const Text(
-                'Placeholder Footer',
+                '© 2024 Union Shop. All rights reserved.',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
@@ -343,46 +377,45 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, '/product');
-          Navigator.pushNamed(context, '/account');
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Image.network(
-                imageUrl,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return Container(
-                    color: Colors.grey[300],
-                    child: const Center(
-                      child:
-                          Icon(Icons.image_not_supported, color: Colors.grey),
-                    ),
-                  );
-                },
+      onTap: () {
+        Navigator.pushNamed(context, '/product');
+        Navigator.pushNamed(context, '/account');
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Image.network(
+              imageUrl,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: Colors.grey[300],
+                  child: const Center(
+                    child: Icon(Icons.image_not_supported, color: Colors.grey),
+                  ),
+                );
+              },
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 4),
+              Text(
+                title,
+                style: const TextStyle(fontSize: 14, color: Colors.black),
+                maxLines: 2,
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 4),
-                Text(
-                  title,
-                  style: const TextStyle(fontSize: 14, color: Colors.black),
-                  maxLines: 2,
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  price,
-                  style: const TextStyle(fontSize: 13, color: Colors.grey),
-                ),
-              ],
-            ),
-          ],
-        ),
-      );
+              const SizedBox(height: 4),
+              Text(
+                price,
+                style: const TextStyle(fontSize: 13, color: Colors.grey),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
