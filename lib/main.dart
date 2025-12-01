@@ -316,9 +316,9 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
-              child: Column(
+              child: const Column(
                 children: [
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -334,7 +334,7 @@ class HomeScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 8),
+                      SizedBox(height:8),
                       Text(
                         '(Term Time)\n'
                         'Monday - Friday 10am - 4pm\n'
@@ -346,7 +346,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
-                      ),
+                      ), 
                     ],
                   ),
                 ],
