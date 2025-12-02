@@ -97,11 +97,15 @@ class HomeScreen extends StatelessWidget {
                         const Spacer(),
                         ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 600),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
+                          child: Wrap(
+                            spacing: 4,
+                            runSpacing: 4,
+                            alignment: WrapAlignment.center,
                             children: [
-                              IconButton(
-                                icon: const Text(
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pushNamed(context, '/about'),
+                                child: const Text(
                                   'ABOUT US',
                                   style: TextStyle(
                                     fontSize: 12,
@@ -110,66 +114,38 @@ class HomeScreen extends StatelessWidget {
                                     letterSpacing: 1,
                                   ),
                                 ),
-                                onPressed: () => Navigator.pushNamed(
-                                  context,
-                                  '/about',
-                                ),
                               ),
                               IconButton(
-                                // tooltip: 'Search',
-                                icon: const Icon(
-                                  Icons.search,
-                                  size: 18,
-                                  color: Colors.grey,
-                                ),
+                                icon: const Icon(Icons.search,
+                                    size: 18, color: Colors.grey),
                                 padding: const EdgeInsets.all(8),
                                 constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
-                                ),
+                                    minWidth: 32, minHeight: 32),
                                 onPressed: placeholderCallbackForButtons,
                               ),
                               IconButton(
-                                // tooltip: 'Account',
-                                icon: const Icon(
-                                  Icons.person_outline,
-                                  size: 18,
-                                  color: Colors.grey,
-                                ),
+                                icon: const Icon(Icons.person_outline,
+                                    size: 18, color: Colors.grey),
                                 padding: const EdgeInsets.all(8),
                                 constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
-                                ),
+                                    minWidth: 32, minHeight: 32),
                                 onPressed: () =>
                                     Navigator.pushNamed(context, '/account'),
                               ),
                               IconButton(
-                                // tooltip: 'Cart',
-                                icon: const Icon(
-                                  Icons.shopping_bag_outlined,
-                                  size: 18,
-                                  color: Colors.grey,
-                                ),
+                                icon: const Icon(Icons.shopping_bag_outlined,
+                                    size: 18, color: Colors.grey),
                                 padding: const EdgeInsets.all(8),
                                 constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
-                                ),
+                                    minWidth: 32, minHeight: 32),
                                 onPressed: placeholderCallbackForButtons,
                               ),
                               IconButton(
-                                // tooltip: 'Menu',
-                                icon: const Icon(
-                                  Icons.menu,
-                                  size: 18,
-                                  color: Colors.grey,
-                                ),
+                                icon: const Icon(Icons.menu,
+                                    size: 18, color: Colors.grey),
                                 padding: const EdgeInsets.all(8),
                                 constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
-                                ),
+                                    minWidth: 32, minHeight: 32),
                                 onPressed: placeholderCallbackForButtons,
                               ),
                             ],
