@@ -67,7 +67,7 @@ class ProductPage extends StatelessWidget {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                IconButton(
+                                IconButton( // Account button
                                   icon: const Icon(
                                     Icons.search,
                                     size: 18,
@@ -80,7 +80,7 @@ class ProductPage extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton(
+                                IconButton( // Profile button
                                   icon: const Icon(
                                     Icons.person_outline,
                                     size: 18,
@@ -91,9 +91,10 @@ class ProductPage extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () =>
+                                      Navigator.pushNamed(context, '/account'),
                                 ),
-                                IconButton(
+                                IconButton( // Shopping bag button
                                   icon: const Icon(
                                     Icons.shopping_bag_outlined,
                                     size: 18,
@@ -106,7 +107,7 @@ class ProductPage extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton(
+                                IconButton( // Menu button
                                   icon: const Icon(
                                     Icons.menu,
                                     size: 18,
