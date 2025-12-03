@@ -69,19 +69,6 @@ class AboutUsPage extends StatelessWidget {
                             runSpacing: 4,
                             alignment: WrapAlignment.center,
                             children: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pushNamed(context, '/about'),
-                                child: const Text(
-                                  'ABOUT US',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 1,
-                                  ),
-                                ),
-                              ),
                               IconButton(
                                 icon: const Icon(Icons.search,
                                     size: 18, color: Colors.grey),
