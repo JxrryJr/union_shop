@@ -44,6 +44,14 @@ class HomeScreen extends StatelessWidget {
     // This is the event handler for buttons that don't work yet
   }
 
+  static const Map<String, String> pageRoutes = {
+    'About Us': '/about',
+  };
+
+  void navigateToPage(BuildContext context, String route) {
+    Navigator.pushNamed(context, route);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,19 +110,6 @@ class HomeScreen extends StatelessWidget {
                             runSpacing: 4,
                             alignment: WrapAlignment.center,
                             children: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pushNamed(context, '/about'),
-                                child: const Text(
-                                  'ABOUT US',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 1,
-                                  ),
-                                ),
-                              ),
                               IconButton(
                                 icon: const Icon(Icons.search,
                                     size: 18, color: Colors.grey),
@@ -140,13 +135,25 @@ class HomeScreen extends StatelessWidget {
                                     minWidth: 32, minHeight: 32),
                                 onPressed: placeholderCallbackForButtons,
                               ),
-                              IconButton(
-                                icon: const Icon(Icons.menu,
-                                    size: 18, color: Colors.grey),
-                                padding: const EdgeInsets.all(8),
+                              ConstrainedBox(
                                 constraints: const BoxConstraints(
                                     minWidth: 32, minHeight: 32),
-                                onPressed: placeholderCallbackForButtons,
+                                child: PopupMenuButton<String>(
+                                  icon: const Icon(Icons.menu,
+                                      size: 18, color: Colors.grey),
+                                  padding: const EdgeInsets.all(8),
+                                  onSelected: (route) {
+                                    navigateToPage(context, route);
+                                  },
+                                  itemBuilder: (context) => pageRoutes.entries
+                                      .map(
+                                        (entry) => PopupMenuItem<String>(
+                                          value: entry.value,
+                                          child: Text(entry.key),
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
                               ),
                             ],
                           ),
