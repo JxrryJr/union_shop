@@ -11,6 +11,14 @@ class ProductPage extends StatelessWidget {
     // This is the event handler for buttons that don't work yet
   }
 
+  static const Map<String, String> pageRoutes = {
+    'About Us': '/about',
+  };
+
+  void navigateToPage(BuildContext context, String route) {
+    Navigator.pushNamed(context, route);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +75,8 @@ class ProductPage extends StatelessWidget {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                IconButton( // Account button
+                                IconButton(
+                                  // Account button
                                   icon: const Icon(
                                     Icons.search,
                                     size: 18,
@@ -80,7 +89,8 @@ class ProductPage extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton( // Profile button
+                                IconButton(
+                                  // Profile button
                                   icon: const Icon(
                                     Icons.person_outline,
                                     size: 18,
@@ -94,7 +104,8 @@ class ProductPage extends StatelessWidget {
                                   onPressed: () =>
                                       Navigator.pushNamed(context, '/account'),
                                 ),
-                                IconButton( // Shopping bag button
+                                IconButton(
+                                  // Shopping bag button
                                   icon: const Icon(
                                     Icons.shopping_bag_outlined,
                                     size: 18,
@@ -107,19 +118,26 @@ class ProductPage extends StatelessWidget {
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton( // Menu button
-                                  icon: const Icon(
-                                    Icons.menu,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  ),
+                                ConstrainedBox(
+                                constraints: const BoxConstraints(
+                                    minWidth: 32, minHeight: 32),
+                                child: PopupMenuButton<String>(
+                                  icon: const Icon(Icons.menu,
+                                      size: 18, color: Colors.grey),
                                   padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onSelected: (route) {
+                                    navigateToPage(context, route);
+                                  },
+                                  itemBuilder: (context) => pageRoutes.entries
+                                      .map(
+                                        (entry) => PopupMenuItem<String>(
+                                          value: entry.value,
+                                          child: Text(entry.key),
+                                        ),
+                                      )
+                                      .toList(),
                                 ),
+                              ),
                               ],
                             ),
                           ),
@@ -149,7 +167,7 @@ class ProductPage extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.network(
-                        'https://shop.upsu.net/cdn/shop/products/BlackSweatshirtFinal_1024x1024@2x.png?v=1741965433', 
+                        'https://shop.upsu.net/cdn/shop/products/BlackSweatshirtFinal_1024x1024@2x.png?v=1741965433',
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return Container(
@@ -203,45 +221,44 @@ class ProductPage extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  
-                    ElevatedButton(
-                      onPressed: placeholderCallbackForButtons,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF4d2963),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                      child: const Text(
-                        'Add to Bag',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                  ElevatedButton(
+                    onPressed: placeholderCallbackForButtons,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF4d2963),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    ElevatedButton(
-                      onPressed: placeholderCallbackForButtons,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey[300],
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8), 
-                        ),
-                      ),
-                      child: const Text(
-                        'Pay now with PayPal',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                    child: const Text(
+                      'Add to Bag',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
+                  ),
+                  ElevatedButton(
+                    onPressed: placeholderCallbackForButtons,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[300],
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Pay now with PayPal',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                   const SizedBox(height: 24),
                   // Product description
                   const Text(
@@ -267,7 +284,7 @@ class ProductPage extends StatelessWidget {
             ),
 
             // Footer
-             Container(
+            Container(
               width: double.infinity,
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
