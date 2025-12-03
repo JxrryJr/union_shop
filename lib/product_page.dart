@@ -149,7 +149,7 @@ class ProductPage extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.network(
-                        'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                        'https://shop.upsu.net/cdn/shop/products/BlackSweatshirtFinal_1024x1024@2x.png?v=1741965433', 
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return Container(
@@ -181,7 +181,7 @@ class ProductPage extends StatelessWidget {
 
                   // Product name
                   const Text(
-                    'Placeholder Product Name',
+                    'Classic Sweatshirt',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -193,7 +193,7 @@ class ProductPage extends StatelessWidget {
 
                   // Product price
                   const Text(
-                    '£15.00',
+                    '£23.00',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -203,6 +203,46 @@ class ProductPage extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
+                  
+                    ElevatedButton(
+                      onPressed: placeholderCallbackForButtons,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF4d2963),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        'Add to Bag',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: placeholderCallbackForButtons,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[300],
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8), 
+                        ),
+                      ),
+                      child: const Text(
+                        'Pay now with PayPal',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  const SizedBox(height: 24),
                   // Product description
                   const Text(
                     'Description',
@@ -214,7 +254,8 @@ class ProductPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'This is a placeholder description for the product. Students should replace this with real product information and implement proper data management.',
+                    'Bringing to you, our best selling Classic Sweatshirt. Available in 4 different colours.\n'
+                    'Soft, comfortable, 50% cotton and 50% polyester.\n',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -226,12 +267,53 @@ class ProductPage extends StatelessWidget {
             ),
 
             // Footer
+             Container(
+              width: double.infinity,
+              color: Colors.grey[50],
+              padding: const EdgeInsets.all(24),
+              child: const Column(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Opening Hours\n'
+                        '❄️ Winter Break Closure Dates ❄️\n'
+                        'Closing 4pm 19/12/2025\n'
+                        'Reopening 10am 05/01/2026\n'
+                        'Last post date: 12pm on 18/12/2025\n'
+                        '------------------------',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        '(Term Time)\n'
+                        'Monday - Friday 10am - 4pm\n'
+                        '(Outside of Term Time / Consolidation Weeks)\n'
+                        'Monday - Friday 10am - 3pm\n'
+                        'Purchase online 24/7',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
             Container(
               width: double.infinity,
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'Placeholder Footer',
+                '© 2024 Union Shop. All rights reserved.',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
