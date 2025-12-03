@@ -133,7 +133,7 @@ class AboutUsPage extends StatelessWidget {
                   ),
                   Container(
                     height: 300,
-                    color: const Color(0xFF4d2963),
+                    color: Colors.white,
                     child: const Center(
                       child: Text(
                         'Welcome to the Union Shop!\n'
@@ -143,7 +143,7 @@ class AboutUsPage extends StatelessWidget {
                         'We hope you enjoy our products as much as we enjoy offering them to you.\n'
                         'If you have any questions or comments, please don’t hesitate to contact us at hello@upsu.net.\n'
                         'Happy shopping! The Union Shop & Reception Team​​​​​​​​​',
-                        style: TextStyle(color: Colors.white, fontSize: 14),
+                        style: TextStyle(color: Color.fromARGB(255, 173, 173, 173), fontSize: 14),
                       ),
                     ),
                   ),
